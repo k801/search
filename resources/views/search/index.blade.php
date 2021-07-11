@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
+@section('styles')
 
+@stop
 @section('content')
 <div class="container">
 
@@ -14,7 +16,7 @@
 
 @endif
 
-<form action="{{route('searchItem')}}" method="POST">
+<form action="{{route('searchItem')}}" method="POST" id="postcontent">
 @csrf
 <select id="select-state" placeholder="search by ..." class="form-control my-3 nice-select"  name="searchTerm">
     <option>search by....</option>
@@ -29,7 +31,7 @@
 
   <input type="text" name="item"  value="{{ old('item') }}" class="form-control" placeholder="name">
 
- <button type="submit" class="btn btn-info my-3 text-light"> search</button>
+ <button type="submit" class="btn btn-info my-3 text-light" id="#search"> search</button>
 </form>
 </div>
 
@@ -65,7 +67,7 @@
             <td>{{$item1->agent}}</td>
             <td>{{$item2->name}}</td>
           <td>{{$item2->comment}}</td>
-          <td>{{$item2->agent}}</td>
+          <td>{{$item2->id_no}}</td>
           </tr>
 
 
@@ -91,10 +93,31 @@
 @endif
 
 
+@endsection
+
+@section('scripts')
+
+{{-- <script>
+$("#postcontent").submit(function(e) {
+                e.preventDefault();
+var myusername = $("#username").val();
+
+ $('#search').click(function(){
+
+     alert("ok");
+ });
 
 
-
-
-
+$.ajax({
+  type: "GET",
+  url: "serverscript.xxx",
+  data: myusername,
+  cache: false,
+  success: function(data){
+     $("#resultarea").text(data);
+  }
+});
+});
+</script> --}}
 
 @endsection

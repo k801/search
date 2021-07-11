@@ -19,7 +19,7 @@
 <select id="select-state" placeholder="search by ..." class="form-control my-3 nice-select"  name="searchTerm">
     <option>search by....</option>
     <option value="name">name</option>
-    <option value="id-no">id-no</option>
+    <option value="id_no">id-no</option>
     <option value="id">id</option>
      <option value="phone1">phone</option>
 
@@ -62,8 +62,8 @@
 </tr>
 
 <tr>
-    <td>statusfamily</td>
-    <td>{{$item1->agent}}</td>
+    <td>ID</td>
+    <td>{{$item1->id_no}}</td>
 </tr>
 
 
@@ -121,7 +121,7 @@
     <table class="table border-strippe">
 
  <tr>
-    <td>name</td>
+    <td>ngame</td>
     <td>{{$item3->name}}</td>
 </tr>
 

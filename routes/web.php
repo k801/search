@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SponserController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\ExelsheeControllert;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -41,7 +42,10 @@ Auth::routes();
 
 
 
+// upload excel sheet table
 
+Route::get('imporExcelsheet', [ExelsheeControllert::class,'imporExcelsheet']);
+Route::post('/impsheet', [ExelsheeControllert::class,'import'])->name('importexcelsheet');
 
 
 
@@ -50,8 +54,8 @@ Auth::routes();
 
 // upload client table
 
-// Route::get('importExportView', [ClientController::class,'importExportView']);
-// Route::post('/impclients', [ClientController::class,'import'])->name('importclient');
+Route::get('importExportView', [ClientController::class,'importExportView']);
+Route::post('/impclients', [ClientController::class,'import'])->name('importclient');
 
 // upload product table
 
@@ -64,7 +68,10 @@ Route::get('importsponserView', [SponserController::class,'importExportView']);
 Route::post('/imsponsers', [SponserController::class,'import'])->name('importSponser');
 
 
+// upload new client table
 
+Route::get('importnewclient', [ProductController::class,'importExportView']);
+Route::post('/imnewclients', [ProductController::class,'import'])->name('importProduct');
 
 
 
@@ -74,16 +81,16 @@ Route::post('/imsponsers', [SponserController::class,'import'])->name('importSpo
 
 
 // upload date column
-Route::get('clientdate',[ClientController::class,'date']);
-Route::get('productdate',[ProductController::class,'date']);
-Route::get('sponserdate',[SponserController::class,'date']);
+// Route::get('clientdate',[ClientController::class,'date']);
+// Route::get('productdate',[ProductController::class,'date']);
+// Route::get('sponserdate',[SponserController::class,'date']);
 
 
 
 // upload time column
 // Route::get('clientime',[ClientController::class,'time']);
-Route::get('producttime',[ProductController::class,'time']);
-Route::get('sponsertime',[SponserController::class,'time']);
+// Route::get('producttime',[ProductController::class,'time']);
+// Route::get('sponsertime',[SponserController::class,'time']);
 
 
 
@@ -94,7 +101,7 @@ Route::post('getItem',[SearchController::class,'search'])->name('searchItem');
 
 
 
-Route::get('updateId',[SearchController::class,'update']);
+// Route::get('updateId',[SearchController::class,'update']);
 
 
 
@@ -103,10 +110,16 @@ Route::get('updateId',[SearchController::class,'update']);
 
 
 
-// Route::get('search', [ItemController::class,'search'])->name('search');
-// Route::post('searchItem', [ItemController::class,'searchItem'])->name('searchItem');
+// Route::get('search', [SearchController::class,'index'])->name('search');
+// Route::post('searchItem', [SearchController::class,'search'])->name('searchItem');
 
 // Route::get('import', ['app\Http\Controllers\ClientController@imprt']);
 // Route::get('nn', ClientController::class,'mm');
 // Route::get('/nn', [app\Http\Controllers\ClientController::class, 'mm']);
 // Route::get('/',[ClientController::class, 'import']);
+
+
+Route::get('newtable', [SearchController::class,'newtable']);
+
+Route::get('update_phone1',[SearchController::class,'update_phone1']);
+

@@ -14,6 +14,8 @@
          font-family: 'Uchen', serif;
     }
 </style>
+{{-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> --}}
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -87,5 +89,6 @@
     </div>
 
 @yield('scripts')
+
 </body>
 </html>
