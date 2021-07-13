@@ -8,6 +8,9 @@ use App\Http\Controllers\SponserController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ExelsheeControllert;
+use App\Http\Controllers\GovController;
+use App\Http\Controllers\AreaController;
+use App\Http\Controllers\FileUploadController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -70,8 +73,8 @@ Route::post('/imsponsers', [SponserController::class,'import'])->name('importSpo
 
 // upload new client table
 
-Route::get('importnewclient', [ProductController::class,'importExportView']);
-Route::post('/imnewclients', [ProductController::class,'import'])->name('importProduct');
+// Route::get('importnewclient', [ProductController::class,'importExportView']);
+// Route::post('/imnewclients', [ProductController::class,'import'])->name('importProduct');
 
 
 
@@ -123,3 +126,45 @@ Route::get('newtable', [SearchController::class,'newtable']);
 
 Route::get('update_phone1',[SearchController::class,'update_phone1']);
 
+//
+// upload table area
+
+
+
+// Route::get('importArea', [AreaController::class,'importAreaTable']);
+// Route::post('/importTableArea', [AreaController::class,'importArea'])->name('importTableArea');
+
+
+Route::get('/get_form_backup',  [SearchController::class,'get_form_backup']);
+
+Route::get('/get_database_backup',  [SearchController::class,'backup_database'])->name('our_backup_database');
+
+Route::get('/update_items',  [SearchController::class,'items_east_essa'])->name('items_easr_essa');
+
+
+
+
+
+
+
+// 2824 att baefor update /// old_att==2942
+
+//after att  3135
+
+
+
+Route::get('/fetch_img_key',  [SearchController::class,'fetch_img_key']);
+
+Route::get('/fetch_att_key',  [SearchController::class,'fetch_att_key']);
+
+
+
+Route::get('/fetch_meta_key',  [SearchController::class,'fetch_meta_key']);
+
+
+
+
+
+
+Route::get('move_file', [FileUploadController::class, 'fileUpload'])->name('file.upload');
+Route::post('file-move', [FileUploadController::class, 'moveImage'])->name('file.upload.post');

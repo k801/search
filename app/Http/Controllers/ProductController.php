@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\Govmport;
 use App\Models\Product;
 use App\Imports\ProductsImport;
 use Illuminate\Http\Request;
@@ -10,6 +11,46 @@ use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
+
+
+
+
+    public function importAreaTable()
+    {
+       return view('areas.index');
+    }
+
+    /**
+    * @return \Illuminate\Support\Collection
+    */
+
+    /**
+    * @return \Illuminate\Support\Collection
+    */
+    public function importArea(Request $request)
+    {
+        // dd($request->all());
+        Excel::import(new Govmport,request()->file('file'));
+        toastr()->success('files uploads mn');
+       return back();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /**
      * Display a listing of the resource.
      *

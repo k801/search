@@ -1,0 +1,77 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jul 11, 2021 at 03:09 PM
+-- Server version: 10.4.19-MariaDB
+-- PHP Version: 7.4.20
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `project1`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `excelsheet`
+--
+
+CREATE TABLE `excelsheet` (
+  `id` int(11) NOT NULL,
+  `id2` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `product` varchar(255) DEFAULT NULL,
+  `product2` varchar(255) DEFAULT NULL,
+  `comment` text DEFAULT NULL,
+  `mob1` varchar(255) DEFAULT NULL,
+  `mob2` varchar(255) DEFAULT NULL,
+  `mob3` varchar(255) DEFAULT NULL,
+  `famaily_phone` varchar(255) DEFAULT NULL,
+  `family_propery` varchar(255) DEFAULT NULL,
+  `data_entry` varchar(255) DEFAULT NULL,
+  `presenter` varchar(255) DEFAULT NULL,
+  `bill_date` varchar(255) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `id_no` varchar(255) DEFAULT NULL,
+  `sponser` varchar(255) DEFAULT NULL,
+  `sponser_property` varchar(255) DEFAULT NULL,
+  `sponser_address` varchar(255) DEFAULT NULL,
+  `sponser_mobile` varchar(255) DEFAULT NULL,
+  `sponser_id_no` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `excelsheet`
+--
+ALTER TABLE `excelsheet`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `excelsheet`
+--
+ALTER TABLE `excelsheet`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5176;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
